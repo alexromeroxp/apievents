@@ -21,15 +21,14 @@ const getEvents = (req, res) => {
     })
 }
 const createEvent = (req, res) => {
-    const falseLocation = [2.123123, -2.123123];
-    const location = falseLocation.toString();
+
     db.Events.create({
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
         image: req.body.image,
         attendances: req.body.attendances,
-        location: location,
+        location: req.body.location.toString(),
         willYouAttend: req.body.willYouAttend
 
     }).then(submmitedEvent => res.send({

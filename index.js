@@ -28,7 +28,7 @@ app.use(express.json());
 
 app.use((req, res, next) => {
     console.log(req.path);
-    if (req.path === "/events/" || req.path === "/images/") {
+    if (req.path.startsWith("/events") || req.path === "/images/") {
         const token = req.headers.authorization
         if (!token) {
             console.log("notoken");
