@@ -10,7 +10,6 @@ const key = require('./utils/token');
 // const io = require('socket.io')(server);
 
 
-
 //Settings
 const PORT = process.env.PORT || 3000;
 
